@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Bridgy Fed Finder",
+    "description": "Find/show bridged account in bluesky",
+    "version": "0.0.1",
+    "icons": {
+        "48": "logo/wip-icon-48.png",
+        "96": "logo/wip-icon-96.png",
+        "128": "logo/wip-icon-128.png"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "Bridgy-fed-finder@momoiro.me",
+            "strict_min_version": "126.0"
+        }
+    },
+    "default_locale": "en",
+    "options_ui": {
+        "page": "option/option.html"
+    },
+    "action": {
+        "default_title": "Bridgy Fed Finder",
+        "default_popup": "popup/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*"
+            ]
+        }
+    ]
+}
