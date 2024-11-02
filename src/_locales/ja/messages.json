@@ -1,2 +1,23 @@
 {
+    "extensionName": {
+        "message": "Bridgy Fed Finder"
+    },
+    "extensionDescription": {
+        "message": "Blueskyにブリッジ済みのアカウントを探す"
+    },
+    "popupMoveBluesky": {
+        "message": "bsky.appで確認する"
+    },
+    "UnknownResponceFromBlueskyApi": {
+        "message": "Bluesky Apiからの不明な応答"
+    },
+    "NoAtprotocolProfileFound": {
+        "message": "Bluesky上にプロフィールが見つかりません"
+    },
+    "FailedToGetBlueskyProfile": {
+        "message": "プロフィールの取得に失敗"
+    },
+    "UrlMustBeActivitypubActor": {
+        "message": "URLはActivityPubのユーザーを示していません"
+    }
 }

@@ -1,2 +1,23 @@
 {
+    "popupTitle": {
+        "message": "Bridgy Fed Finder"
+    },
+    "popupSubtitle": {
+        "message": "Find/show bridged account in bluesky"
+    },
+    "popupMoveBluesky": {
+        "message": "move to bsky.app"
+    },
+    "UnknownResponceFromBlueskyApi": {
+        "message": "Unknown responce from bluesky api"
+    },
+    "NoAtprotocolProfileFound": {
+        "message": "No atprotocol profile found"
+    },
+    "FailedToGetBlueskyProfile": {
+        "message": "Failed to get profile"
+    },
+    "UrlMustBeActivitypubActor": {
+        "message": "Url is not a activitypub actor"
+    }
 }

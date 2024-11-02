@@ -8,7 +8,7 @@ async function getATProtocolHundle(ActivityPubUrl) {
         hundle = activityPubJson.preferredUsername + "." + new URL(activityPubJson.inbox).host + ".ap.brid.gy"
     } catch (error) {
         console.warn(error)
-        throw new Error("Url is not a activitypub actor")
+        throw new Error("UrlMustBeActivitypubActor")
     }
     try{
         blueskyResponce = await fetch("https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile?actor=" + hundle)
@@ -16,14 +16,14 @@ async function getATProtocolHundle(ActivityPubUrl) {
         console.debug(blueskyJson)
     } catch(error) {
         console.warn(error)
-        throw new Error("Failed to get profile")
+        throw new Error("FailedToGetBlueskyProfile")
     }
     if (blueskyResponce.status != 200) {
         if(blueskyJson.message == "Profile not found"){
-            throw new Error("No atprotocol profile found")
+            throw new Error("NoAtprotocolProfileFound")
         }
         console.warn(blueskyJson)
-        throw new Error("Unknown responce from bluesky api")
+        throw new Error("UnknownResponceFromBlueskyApi")
     }
     else {
         return hundle
@@ -42,7 +42,7 @@ async function checkActivetab() {
         });
         document.getElementById("open-bsky").disabled = false;
     } catch(error) {
-        document.getElementById("result").innerText = error
+        document.getElementById("result").innerText = browser.i18n.getMessage(error.message) || error.message
     } finally {
         document.getElementById("activetab-loading").style.setProperty('display', 'none')
     }

@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="popup.css">
     <script src="popup.js" defer></script>
-    <title>Bridgy Fed Finder</title>
+    <script src="l10n.js" defer></script>
+    <title data-l10n="extensionName"></title>
 </head>
 <body>
-    <h3>Bridgy Fed Finder</h3>
-    <p>Find bridged account in bluesky</p>
+    <h3 data-l10n="extensionName"></h3>
+    <p data-l10n="extensionDescription"></p>
     <div id="activetab-section">
         <div id="activetab-loading" class="loading"></div>
         <p id="result"></p>
-        <button id="open-bsky" disabled>move to bsky.app</a>
+        <button id="open-bsky" data-l10n="popupMoveBluesky" disabled></a>
     </div>
 </body>
 </html>

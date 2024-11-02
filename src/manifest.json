@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Bridgy Fed Finder",
-    "description": "Find/show bridged account in bluesky",
+    "name": "__MSG_extensionName__",
+    "description": "__MSG_extensionDescription__",
     "version": "0.0.1",
     "icons": {
         "48": "logo/wip-icon-48.png",
