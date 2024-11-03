@@ -1,8 +1,8 @@
 {
-    "popupTitle": {
+    "extensionName": {
         "message": "Bridgy Fed Finder"
     },
-    "popupSubtitle": {
+    "extensionDescription": {
         "message": "Find/show bridged account in bluesky"
     },
     "popupMoveBluesky": {
