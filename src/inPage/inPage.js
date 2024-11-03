@@ -20,7 +20,7 @@ async function addNoticeUI(hundle) {
         window.open("https://bsky.app/profile/" + hundle, '_blank').focus()
     });
     inPageFoundUI.querySelector("#open-bsky").disabled = false;
-    const {default: translate} = await import(browser.runtime.getURL("/commonjs/l10n.js"))
+    const { default: translate } = await import(browser.runtime.getURL("/commonjs/l10n.js"))
     for (elem of inPageFoundUI.querySelectorAll("[data-l10n]")) {
         elem.innerText = translate(elem.dataset.l10n)
     }
@@ -31,8 +31,17 @@ async function removeNoticeUI() {
     document.getElementById("Bridgy-Fed-Finder")?.remove()
 }
 
-//navigate event doesn't work in some browser
-document.addEventListener("click", checkInpage);
-window.addEventListener("popstate", checkInpage);
+(async () => {
+    const { default: config } = await import(browser.runtime.getURL("/commonjs/conf.js"))
+    await config.$loaded
 
-checkInpage()
+    if (config["enableInpageCheck"]) {
+        //navigate event doesn't work in some browser
+        document.addEventListener("click", checkInpage);
+        window.addEventListener("popstate", checkInpage);
+
+        checkInpage()
+    } else {
+        console.debug("Bridgy-Fed-Finder inpageCheck disabled")
+    }
+})();

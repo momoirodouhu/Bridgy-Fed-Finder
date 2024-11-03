@@ -19,5 +19,8 @@
     },
     "UrlMustBeActivitypubActor": {
         "message": "Url is not a activitypub actor"
+    },
+    "enableInpageCheck": {
+        "message": "enable inpage check"
     }
 }

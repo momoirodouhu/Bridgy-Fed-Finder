@@ -19,5 +19,8 @@
     },
     "UrlMustBeActivitypubActor": {
         "message": "URLはActivityPubのユーザーを示していません"
+    },
+    "enableInpageCheck": {
+        "message": "ページ自動チェックを有効にする"
     }
 }

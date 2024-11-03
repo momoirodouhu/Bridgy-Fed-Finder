@@ -16,7 +16,7 @@
     },
     "default_locale": "en",
     "options_ui": {
-        "page": "option/option.html"
+        "page": "config/config.html"
     },
     "action": {
         "default_title": "Bridgy Fed Finder",
@@ -45,5 +45,8 @@
                 "https://*/*"
             ]
         }
+    ],
+    "permissions": [
+        "storage"
     ]
 }
