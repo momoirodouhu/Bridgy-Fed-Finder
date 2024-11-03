@@ -1,8 +1,12 @@
 
-export default async function getATProtocolHundle(ActivityPubUrl) {
+export default async function getATProtocolHundle(activityPubUrl) {
     var hundle = ""
     try {
-        const activityPubResponce = await fetch(ActivityPubUrl, {headers: { Accept: "application/activity+json", "Content-Type": "application/activity+json" }})
+        activityPubUrl = new URL(activityPubUrl)
+        activityPubUrl.searchParams.set("activitypub",true) //Explicitly difference requests because cloudflare doesn't respect Accept header
+        const activityPubResponce = await fetch(activityPubUrl, {
+            headers: { Accept: "application/activity+json", "Content-Type": "application/activity+json" }
+        })
         const activityPubJson = await activityPubResponce.json()
         console.debug(activityPubJson)
         hundle = activityPubJson.preferredUsername + "." + new URL(activityPubJson.inbox).host + ".ap.brid.gy"
