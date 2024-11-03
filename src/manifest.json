@@ -38,6 +38,9 @@
             "js": [
                 "inPage/inPage.js"
             ],
+            "css": [
+                "inPage/inPageFoundUI.css"
+            ],
             "matches": [
                 "https://*/*"
             ]
