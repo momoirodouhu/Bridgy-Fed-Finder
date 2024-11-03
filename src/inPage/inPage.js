@@ -15,4 +15,8 @@ async function checkInpage() {
     }
 }
 
+//navigate event doesn't work in some browser
+document.addEventListener("click", checkInpage);
+window.addEventListener("popstate", checkInpage);
+
 checkInpage()
