@@ -15,10 +15,11 @@ export default async function getATProtocolHundle(activityPubUrl) {
         throw new Error("UrlMustBeActivitypubActor")
     }
     var blueskyResponce = {}
+    var blueskyJson = {}
     try {
         hundle = hundle.replaceAll("~", "-").replaceAll("_", "-") //https://fed.brid.gy/docs#fediverse-get-started
         blueskyResponce = await fetch("https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile?actor=" + hundle)
-        const blueskyJson = await blueskyResponce.json()
+        blueskyJson = await blueskyResponce.json()
         console.debug(blueskyJson)
     } catch (error) {
         console.warn(error)
