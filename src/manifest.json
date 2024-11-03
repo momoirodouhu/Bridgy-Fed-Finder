@@ -39,7 +39,8 @@
                 "inPage/inPage.js"
             ],
             "css": [
-                "inPage/inPageFoundUI.css"
+                "inPage/inPageFoundUI.css",
+                "colors/all.css"
             ],
             "matches": [
                 "https://*/*"

@@ -22,5 +22,8 @@
     },
     "enableInpageCheck": {
         "message": "enable inpage check"
+    },
+    "colorThema": {
+        "message": "select color thema"
     }
 }

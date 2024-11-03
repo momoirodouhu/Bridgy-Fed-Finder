@@ -19,6 +19,8 @@ async function checkActivetab() {
 }
 
 (async () => {
+    const { default: colorize } = await import("/commonjs/color.js")
+    colorize(document)
     const {default: translate} = await import("/commonjs/l10n.js")
     for (elem of document.querySelectorAll("[data-l10n]")) {
         elem.innerText = translate(elem.dataset.l10n)

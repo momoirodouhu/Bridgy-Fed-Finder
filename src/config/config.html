@@ -4,15 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="config.css">
+    <link rel="stylesheet" href="/colors/all.css">
     <script src="config.js" defer></script>
     <title>Bridgy Finder Config</title>
 </head>
 
 <body>
-    <div id="config-loading" class="loading"></div>
-    <div id="config-list" style="display: none">
-        <p data-l10n="enableInpageCheck"></p>
-        <input type="checkbox" data-configKey="enableInpageCheck">
+    <div class="Bridgy-Fed-Finder-config">
+        <div id="config-loading" class="loading"></div>
+        <div id="config-list" style="display: none">
+            <label data-l10n="enableInpageCheck" for="enableInpageCheck"></label>
+            <input type="checkbox" id="enableInpageCheck" data-configKey="enableInpageCheck">
+            <br>
+            <label data-l10n="colorThema" for="colorThema"></label>
+            <select id="colorThema" data-configKey="colorThema"></select>
+        </div>
     </div>
 </body>
 

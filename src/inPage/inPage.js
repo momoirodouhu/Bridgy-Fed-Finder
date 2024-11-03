@@ -14,12 +14,14 @@ async function checkInpage() {
 async function addNoticeUI(hundle) {
     htmlText = await (await fetch(browser.runtime.getURL("/inPage/inPageFoundUI.html"))).text()
     const inPageFoundUI = new DOMParser().parseFromString(htmlText, "text/html").body.firstElementChild
-    inPageFoundUI.setAttribute("id", "Bridgy-Fed-Finder")
+    inPageFoundUI.setAttribute("id", "Bridgy-Fed-Finder-inpage")
     inPageFoundUI.querySelector("#result").innerText = hundle
     inPageFoundUI.querySelector("#open-bsky").addEventListener('click', () => {
         window.open("https://bsky.app/profile/" + hundle, '_blank').focus()
     });
     inPageFoundUI.querySelector("#open-bsky").disabled = false;
+    const { default: colorize } = await import(browser.runtime.getURL("/commonjs/color.js"))
+    colorize(inPageFoundUI.parentElement)
     const { default: translate } = await import(browser.runtime.getURL("/commonjs/l10n.js"))
     for (elem of inPageFoundUI.querySelectorAll("[data-l10n]")) {
         elem.innerText = translate(elem.dataset.l10n)
@@ -28,7 +30,7 @@ async function addNoticeUI(hundle) {
 }
 
 async function removeNoticeUI() {
-    document.getElementById("Bridgy-Fed-Finder")?.remove()
+    document.getElementById("Bridgy-Fed-Finder-inpage")?.remove()
 }
 
 (async () => {

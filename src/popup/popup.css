@@ -1,5 +1,16 @@
 body {
-    width: auto;
+    margin: 0;
+    border-radius: 0;
+}
+
+.Bridgy-Fed-Finder-popup{
+    width: 400px;
+    padding: 10px;
+    button{
+            border: 0px;
+            padding: 8px;
+            border-radius: 300vmin;
+    }
 }
 
 /* css-loaders */

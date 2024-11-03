@@ -1,0 +1,15 @@
+.Bridgy-Fed-Finder-gray{
+    background-color: #161e27;
+    p,h3,label{
+        color: white;
+    }
+    button{
+        color: white;
+    }
+    button:not(:disabled){
+        background-color: #208bfe;
+    }
+    button:not(:disabled):hover{
+        background-color: #4ca2fe;
+    }
+}

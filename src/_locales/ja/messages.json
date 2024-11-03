@@ -22,5 +22,8 @@
     },
     "enableInpageCheck": {
         "message": "ページ自動チェックを有効にする"
+    },
+    "colorThema": {
+        "message": "カラーテーマ"
     }
 }
