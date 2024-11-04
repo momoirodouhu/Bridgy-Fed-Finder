@@ -6,10 +6,22 @@ body {
 .Bridgy-Fed-Finder-popup{
     width: 400px;
     padding: 10px;
-    button{
+    #open-bsky{
             border: 0px;
             padding: 8px;
             border-radius: 300vmin;
+    }
+    #result{
+        display: inline;
+    }
+    #reload{
+        border: 0;
+        padding: 0;
+        background-color: transparent;
+        cursor: pointer;
+        img{
+            vertical-align: top
+        }
     }
 }
 

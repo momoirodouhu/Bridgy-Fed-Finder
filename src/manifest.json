@@ -26,7 +26,8 @@
         {
             "resources": [
                 "commonjs/*",
-                "inPage/inPageFoundUI.*"
+                "inPage/inPageFoundUI.*",
+                "icon/*"
             ],
             "matches": [
                 "https://*/*"
