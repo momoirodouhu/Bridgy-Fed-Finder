@@ -1,18 +1,24 @@
-body{
+body {
     margin: 0px;
 }
 
-#config-list{
-    width: calc(100vw - 20px);
-    height: calc(100vh - 20px);
+.Bridgy-Fed-Finder-config {
+    width: 100vw;
+    height: 100vh;
+}
+
+#config-list {
+    margin: auto;
     padding: 10px;
-    button{
+
+    button {
         border: 0px;
         padding-left: 6px;
         padding-right: 6px;
         border-radius: 300vmin;
     }
-    #cacheParge{
+
+    #cacheParge {
         margin-left: 1.5rem;
     }
 }

@@ -10,7 +10,7 @@ async function checkActivetab() {
         hundle = await getATProtocolHundle(tabs[0].url,noCache = true)
         document.getElementById("result").innerText = hundle
         document.getElementById("open-bsky").addEventListener('click', () => {
-            window.open("https://bsky.app/profile/" + hundle, '_blank').focus()
+            browser.tabs.create({url: "https://bsky.app/profile/" + hundle,})
             window.close()
         });
         document.getElementById("open-bsky").disabled = false;
