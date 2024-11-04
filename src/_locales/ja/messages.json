@@ -25,5 +25,11 @@
     },
     "colorThema": {
         "message": "カラーテーマ"
+    },
+    "chacheCount": {
+        "message": "キャッシュ済みのページ: "
+    },
+    "cacheParge": {
+        "message": "キャッシュを削除"
     }
 }

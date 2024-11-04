@@ -22,6 +22,11 @@ async function listConfig() {
         const { default: colorize } = await import("/commonjs/color.js")
         colorize(document)
     })
+    var colorThema = document.getElementById("chacheCount").innerText = Object.keys(config.cache).length
+    var colorThema = document.getElementById("cacheParge").addEventListener("click",() => {
+        config.cache = {}
+        document.getElementById("chacheCount").innerText = 0
+    })
     var configElements = document.querySelectorAll("[data-configKey]")
     for (elem of configElements) {
         (elem.type == "checkbox" ? elem.checked = config[elem.dataset.configkey] : elem.value = config[elem.dataset.configkey])

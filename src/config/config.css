@@ -6,6 +6,15 @@ body{
     width: calc(100vw - 20px);
     height: calc(100vh - 20px);
     padding: 10px;
+    button{
+        border: 0px;
+        padding-left: 6px;
+        padding-right: 6px;
+        border-radius: 300vmin;
+    }
+    #cacheParge{
+        margin-left: 1.5rem;
+    }
 }
 
 #config-list>p {

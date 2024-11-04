@@ -25,5 +25,11 @@
     },
     "colorThema": {
         "message": "select color thema"
+    },
+    "chacheCount": {
+        "message": "cached pages: "
+    },
+    "cacheParge": {
+        "message": "parge cache"
     }
 }

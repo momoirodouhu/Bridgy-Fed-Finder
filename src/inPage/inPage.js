@@ -2,12 +2,15 @@
 async function checkInpage() {
     try {
         const { default: getATProtocolHundle } = await import(browser.runtime.getURL("/commonjs/getATProtocolHundle.js"))
-        const hundle = await getATProtocolHundle(document.URL)
+        var url = new URL(document.URL)
+        url.search = ""
+        url.hash = ""
+        const hundle = await getATProtocolHundle(url)
         await removeNoticeUI()
         await addNoticeUI(hundle)
     } catch (error) {
         await removeNoticeUI()
-        console.debug("Brdgy Fed Finder: " + (browser.i18n.getMessage(error.message) || error.message))
+        console.debug("Brdgy Fed Finder: " + error.message)
     }
 }
 

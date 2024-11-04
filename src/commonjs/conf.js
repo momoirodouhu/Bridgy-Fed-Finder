@@ -2,7 +2,8 @@ const { default: Configs } = await import(browser.runtime.getURL("/commonjs/webe
 
 var config = new Configs({
     enableInpageCheck: false,
-    colorThema: "gray"
+    colorThema: "gray",
+    cache: {}
 })
 
 export default config
