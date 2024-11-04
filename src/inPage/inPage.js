@@ -1,11 +1,12 @@
 
 async function checkInpage() {
+    if(sessionStorage.getItem('Bridgy-Fed-Finder-closed') == "true"){
+        console.debug("Bridgy-Fed-Finder was closed: " + sessionStorage.getItem('Bridgy-Fed-Finder-closed'))
+        return
+    }
     try {
         const { default: getATProtocolHundle } = await import(browser.runtime.getURL("/commonjs/getATProtocolHundle.js"))
-        var url = new URL(document.URL)
-        url.search = ""
-        url.hash = ""
-        const hundle = await getATProtocolHundle(url)
+        const hundle = await getATProtocolHundle(document.URL)
         await removeNoticeUI()
         await addNoticeUI(hundle)
     } catch (error) {
@@ -23,6 +24,11 @@ async function addNoticeUI(hundle) {
         window.open("https://bsky.app/profile/" + hundle, '_blank').focus()
     });
     inPageFoundUI.querySelector("#open-bsky").disabled = false;
+    inPageFoundUI.querySelector("#close-icon").src = browser.runtime.getURL("/icon/close.svg")
+    inPageFoundUI.querySelector("#close-icon").addEventListener("click",() => {
+        sessionStorage.setItem("Bridgy-Fed-Finder-closed",true)
+        removeNoticeUI()
+    })
     const { default: colorize } = await import(browser.runtime.getURL("/commonjs/color.js"))
     colorize(inPageFoundUI.parentElement)
     const { default: translate } = await import(browser.runtime.getURL("/commonjs/l10n.js"))
@@ -41,6 +47,9 @@ async function removeNoticeUI() {
     await config.$loaded
 
     if (config["enableInpageCheck"]) {
+        if(performance.getEntriesByType("navigation")[0].type == "reload"){
+            sessionStorage.setItem("Bridgy-Fed-Finder-closed",false)
+        }
         //navigate event doesn't work in some browser
         document.addEventListener("click", checkInpage);
         window.addEventListener("popstate", checkInpage);

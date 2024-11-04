@@ -10,9 +10,18 @@
     p,h3{
         color: black;
     }
+    #close{
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        border: 0px;
+        padding: 0;
+        background-color: transparent;
+        cursor: pointer;
+    }
     button{
-            border: 0px;
-            padding: 8px;
-            border-radius: 300vmin;
+        border: 0px;
+        padding: 8px;
+        border-radius: 300vmin;
     }
 }
