@@ -1,7 +1,7 @@
 <div align="center">
     <h1>Bridgy Fed Finder</h1>
     <h3>Find/show bridged account in bluesky</h3>
-    1.0.0 released
+    1.0.1 released
 </div>
 
 ## Installation
