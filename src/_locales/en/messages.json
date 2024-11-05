@@ -20,6 +20,9 @@
     "UrlMustBeActivitypubActor": {
         "message": "Url is not a activitypub actor"
     },
+    "hostMustBeActivitypubServer": {
+        "message": "This server is not a activitypub server"
+    },
     "enableInpageCheck": {
         "message": "enable inpage check"
     },

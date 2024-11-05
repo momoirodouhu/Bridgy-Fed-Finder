@@ -1,30 +1,17 @@
 
 export default async function getATProtocolHundle(url, noCache = false) {
+    const { saveCache: saveCache, getCache: getCache } = await import(browser.runtime.getURL("/commonjs/cache.js"))
     if (!noCache) {
-        const { default: config } = await import(browser.runtime.getURL("/commonjs/conf.js"))
-        await config.$loaded
-        const sha256 = await crypto.subtle.digest('SHA-256', (new Uint16Array([].map.call(url, c => c.charCodeAt(0)))).buffer)
-        const key = btoa(String.fromCharCode.apply(null, new Uint8Array(sha256)));
-        const cachedValue = config.cache[key]
-        if (cachedValue) {
-            console.debug("cache found: " + url + " -> " + cachedValue)
-            if (errors.includes(cachedValue)) {
-                throw new Error(cachedValue)
-            }
+        const cachedValue = await getCache(url)
+        if (errors.includes(cachedValue)) {
+            throw new Error(cachedValue)
+        }
+        if(cachedValue){
             return cachedValue
         }
     }
-    const saveCache = async (url, hundle) => {
-        const { default: config } = await import(browser.runtime.getURL("/commonjs/conf.js"))
-        await config.$loaded
-        const sha256 = await crypto.subtle.digest('SHA-256', (new Uint16Array([].map.call(url, c => c.charCodeAt(0)))).buffer)
-        const key = btoa(String.fromCharCode.apply(null, new Uint8Array(sha256)));
-        var newCache = JSON.parse(JSON.stringify(config.cache))
-        newCache[key] = hundle;
-        config.cache = newCache;
-        console.debug("cached: " + url + " as " + key)
-        console.debug(newCache)
-    }
+    const {default: checkNodeinfo} = await import(browser.runtime.getURL("/commonjs/checkNodeinfo.js"))
+    await checkNodeinfo(new URL(url).host,noCache = noCache)
     var hundle = ""
     try {
         var activityPubUrl = new URL(url)
@@ -65,4 +52,6 @@ export default async function getATProtocolHundle(url, noCache = false) {
     }
 }
 
-export const errors = ["UrlMustBeActivitypubActor", "FailedToGetBlueskyProfile", "NoAtprotocolProfileFound", "UnknownResponceFromBlueskyApi"]
+const {errors: checkNodeinfoErrors} = await import(browser.runtime.getURL("/commonjs/checkNodeinfo.js"))
+export const errors = ["UrlMustBeActivitypubActor", "FailedToGetBlueskyProfile", "NoAtprotocolProfileFound", "UnknownResponceFromBlueskyApi",
+        ...checkNodeinfoErrors]

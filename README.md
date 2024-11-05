@@ -15,6 +15,5 @@ But don't try to do a lot in this single extension.
 
 ## TODO (not necessarily)
 - [ ] no log mode
-- [ ] check nodeinfo
 - [ ] gihub action
 - [ ] app api follow

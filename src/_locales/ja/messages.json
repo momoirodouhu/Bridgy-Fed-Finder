@@ -20,6 +20,9 @@
     "UrlMustBeActivitypubActor": {
         "message": "URLはActivityPubのユーザーを示していません"
     },
+    "hostMustBeActivitypubServer": {
+        "message": "ActivityPubサーバーではありません"
+    },
     "enableInpageCheck": {
         "message": "ページ自動チェックを有効にする"
     },
