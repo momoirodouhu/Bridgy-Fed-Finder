@@ -5,11 +5,27 @@ body {
 .Bridgy-Fed-Finder-config {
     width: 100vw;
     height: 100vh;
+
+    @media screen and (min-height:480px) {
+        display: flex;
+        text-align: center;
+    }
+
+    @media screen and (min-width:680px) {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 #config-list {
     margin: auto;
     padding: 10px;
+    text-align: left;
+
+    @media screen and (min-height:480px) and (min-width:680px) {
+        transform: scale(2);
+        /* bad hard coding. use calc? */
+    }
 
     button {
         border: 0px;
